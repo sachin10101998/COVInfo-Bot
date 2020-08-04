@@ -1,0 +1,3 @@
+drf-yasg==1.17.1
+openapi-codec==1.3.2
+packaging==20.3

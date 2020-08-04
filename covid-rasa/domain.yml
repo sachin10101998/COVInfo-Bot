@@ -1,0 +1,81 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+  
+intents:
+- greet
+- bye
+- thank
+- faq
+- corona
+- inform
+- faq/ask_general
+- faq/ask_treatment
+- faq/ask_cure
+- out_of_scope
+- stateconfirmedcases
+
+entities:
+- patient_address
+- patient_email
+- patient_name
+- patient_symptom
+- patient_phone
+- state_name
+
+slots:
+  patient_address:
+    type: unfeaturized
+  patient_email:
+    type: unfeaturized
+  patient_name:
+    type: unfeaturized
+  patient_phone:
+    type: unfeaturized
+  patient_symptom:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+
+responses:
+  utter_noworries:
+  - text: No worries!
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request.
+  utter_greet:
+  - text: Hi
+  utter_bye:
+  - text: Bye!
+  utter_ask_patient_name:
+  - text: What's your name?
+  utter_ask_patient_email:
+  - text: What's your e-mail address?
+  utter_ask_patient_phone:
+  - text: What's your phone number?
+  utter_ask_patient_address:
+  - text: What's your home address?
+  utter_ask_patient_symptom:
+  - text: What symptoms are you showing?
+
+actions:
+- respond_faq
+- utter_noworries
+- utter_greet
+- utter_bye
+- utter_ask_patient_name
+- utter_ask_patient_email
+- utter_ask_patient_phone
+- utter_ask_patient_address
+- utter_ask_patient_symptom
+- utter_out_of_scope
+- state_confirmed_cases_action
+- state_dead_cases_action
+- state_recovered_cases_action
+- state_active_cases_action
+- district_recovered_cases_action
+- district_active_cases_action
+- district_dead_cases_action
+- district_confirmed_cases_action
+
+forms:
+- corona_form
